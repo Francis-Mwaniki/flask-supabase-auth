@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Success - Supabase Authentication{% endblock %}
+
+{% block content %}
+    <div class="jumbotron text-center">
+        <h1 class="display-4">Login Successful</h1>
+        <p class="lead">Welcome to the success page!</p>
+        <hr class="my-4">
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+            <a class="btn btn-danger btn-lg" href="{{ url_for('logout') }}" role="button">Logout</a>
+        </p>
+    </div>
+{% endblock %}
+
+{% block extra_scripts %}
+    <script>
+        setTimeout(() => {
+            window.location.href = "{{ url_for('home') }}";
+        }, 5000);
+    </script>
+{% endblock %}
+```
